@@ -15,3 +15,16 @@ class Produtos(models.Model):
     def __str__(self):
 
         return self.produto
+
+class Sobre_Nos(models.Model):
+    data = models.DateField(auto_now_add=True)
+    titulo = models.CharField(max_length=20)
+    texto = models.TextField(blank=False, null=False)
+
+    class Meta:
+
+        verbose_name_plural = "Sobre Nós"
+
+    def __str__(self):
+
+        return self.titulo

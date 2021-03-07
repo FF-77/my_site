@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My Site</title>
 
     <style>
         body {
@@ -25,40 +25,17 @@
             color: blue;
             font-family: Arial, Helvetica, sans-serif;
             text-align: center;
-            margin-top: 60px;
+            margin-top: 60px; 
         }
-
-        main h2 {
-            color: green;
-            font-family: Arial, Helvetica, sans-serif;
-            text-align: center;
-            margin-top: 90px;
-        }
-
-        #tabela_produtos {
-            border: 1px solid white;
-            background-color: white;
-            border-radius: 0.5rem;
-            margin-top: 20px;
-            width: 90%;
-            margin-right: auto;
+        
+        article {
+            width: 50%;
             margin-left: auto;
-        }
-
-        #titulo_produto th {
-            padding: 7px 20px 7px 10px;
-        }
-
-        td {
+            margin-right: auto;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-size: 10pt;
-            border: 1px solid #FFF8DC;
-            border-radius: 0.3rem;
-            padding: 4px 0px 4px 10px;
-            background-color: #FFF8DC;
+            text-align: center;
         }
-
-
+        
         footer {
             margin-top: 50%;
         }
@@ -71,6 +48,7 @@
 </head>
 <body>
     <header>
+
         <nav id=menu>
             <ul>
                 <li><a href="http://127.0.0.1:8000/">Home</a></li>
@@ -79,33 +57,20 @@
             </ul>
         </nav>
 
-        <h1>Bem Vindo!</h1>
-
+        <h1>
+            {% for sobre in sobre_nos %}    
+                {{sobre.titulo}}
+            {% endfor %}
+        </h1>
     </header>
 
     <main>
-        <h2>Tabela de Produtos</h2>
 
-        <table id='tabela_produtos'>
-            <tr id="titulo_produto">
-                <th>PRODUTO</th>
-                <th>PREÇO</th>
-                <th>QUANTIDADE</th>
-                <th>DESCRIÇÃO</th>
-            </tr>
-            
-            {% for produto in produtos %}
-            <tr id="produtos_inseridos">
-                <td>{{produto.produto}}</td>
-                <td>{{produto.preço}}</td>
-                <td>{{produto.quantidade}}</td>
-                <td>{{produto.descrição}}</td>
-
-            </tr>
+        <article>
+            {% for sobre in sobre_nos %}
+                {{sobre.texto}}
             {% endfor %}
-
-
-        </table>
+        </article>
 
     </main>
 
