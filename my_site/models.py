@@ -28,3 +28,16 @@ class Sobre_Nos(models.Model):
     def __str__(self):
 
         return self.titulo
+
+class Formulario(models.Model):
+    data_envio = models.DateField(auto_now_add=True)
+    email = models.CharField(max_length=50)
+    nota = models.TextField(max_length=255, blank=True, null=True)
+
+    class Meta:
+
+        verbose_name = "Formulário"
+
+    def __str__(self):
+
+        return self.nota

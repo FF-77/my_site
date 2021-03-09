@@ -17,6 +17,12 @@
             margin-right: auto;
         }
 
+        #formulario {
+            padding: 40px 10px 40px 10px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         #menu {
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             color: transparent;
@@ -45,24 +51,6 @@
             background-color: blue;
             color: white;
             border-radius: 0.3rem;
-        }
-
-        header h1 {
-            font-family: Arial, Helvetica, sans-serif;
-            text-align: center;
-            margin-top: 60px; 
-        }
-        
-        article {
-            width: 90%;
-            margin-left: auto;
-            margin-right: auto;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-size: 11pt;
-            text-align: center;
-            background-color: skyblue;
-            border-radius: 0.2rem;
-            padding: 20px 10px 20px 10px;
         }
         
         footer {
@@ -94,21 +82,19 @@
             </ul>
         </nav>
 
-        <h1>
-            {% for sobre in sobre_nos %}    
-                {{sobre.titulo}}
-            {% endfor %}
-        </h1>
+        
     </header>
 
     <main>
-
+        
         <div>
-            <article>
-                {% for sobre in sobre_nos %}
-                    <p>{{sobre.texto}}</p>
-                {% endfor %}
-            </article>
+            <form id="formulario">
+                {% csrf_token %}
+            
+                {{ form.as_p }}
+            
+                <button type='submit'> Enviar </button>
+            </form>
         </div>
     </main>
 

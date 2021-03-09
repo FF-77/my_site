@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
+    {% block conteudo %}
     <style>
         body {
             background-color: white;
@@ -108,6 +108,7 @@
             <ul>
                 <li><a href="http://127.0.0.1:8000/">Home</a></li>
                 <li><a href="http://127.0.0.1:8000/sobre">Sobre</a></li>
+                <li><a href="http://127.0.0.1:8000/contato">Contato</a></li>
                 <li><a href="http://127.0.0.1:8000/admin">Logon</a></li>
             </ul>
         </nav>
@@ -149,4 +150,5 @@
     </footer>
     
 </body>
+    {% endblock %}
 </html>
